@@ -2,15 +2,18 @@ name: Build Winlator
 
 on:
   push:
-    branches: [ main, cmod_bionic ]
+    branches: [ cmod_bionic ]  # só dispara nesse branch
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          submodules: true  # garante que submodules sejam puxados
+          fetch-depth: 0
 
       - name: Setup Java
         uses: actions/setup-java@v4
