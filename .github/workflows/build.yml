@@ -2,7 +2,7 @@ name: Build Winlator
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, cmod_bionic ]
 
 jobs:
   build:
